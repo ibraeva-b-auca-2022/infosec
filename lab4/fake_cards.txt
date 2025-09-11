@@ -1,1 +1,2 @@
 === Demo collected data (training only) ===
+Card: 2222222222222222, Expiry: 03/34, CVV: 2222

@@ -79,23 +79,28 @@ textarea:focus, input:focus{
 }
 
 .exp-cvc {
-  justify-self: center;
+  display: flex;               /* Горизонтальный ряд */ /* Распределяем по краям */
+  align-items: flex-start;     /* Выравнивание по верхнему краю */
+  width: 100%;                 /* Занимает всю ширину контейнера */
+  margin-top: 20px;            /* Отступ сверху от других элементов */
+}
+
+.exp-cvc > div {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 90%;
+  flex-direction: column;      /* Метка сверху, поле снизу */
+  width: 47%;                  /* Почти половина ширины для каждой колонки */
+  font-size: 0.9rem;           /* Размер шрифта одинаковый */
 }
 
-.expiration {
-  font-size: 0.75rem;
-  width: 50%;
-  margin-right: 20px;
+.exp-cvc label {
+  margin-bottom: 5px;          /* Отступ между label и input */
+  font-weight: 500;
 }
 
-.security {
-  font-size: 0.75rem;
-  width: 50%;
-  margin-left: 20px;
+.exp-cvc input {
+  padding: 8px;
+  font-size: 0.9rem;           /* Совпадает с label */
+  box-sizing: border-box;
 }
 
 span {
@@ -103,36 +108,31 @@ span {
   cursor: pointer;
 }
 
+.btn-container {
+    display: flex;
+    justify-content: flex-end; /* кнопка справа */
+    margin: 30px 45px 20px 0;          /* отступ от верха */
+}
+
 .btn {
-  background-color: #F9E450;
-  border: 2px solid #1B1B1B;
-  box-sizing: border-box;
-  border-radius: 16px;
-  padding: 16px 32px 16px 16px;
-  text-align: center;
-  font-weight: 800;
-  margin-top: 20px;
-  
-  width: 141px;
-  height: 56px;
-  left: 16px;
-  top: 88px;
-  
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  align-self: flex-end;
-  cursor: pointer;
-  transition: 0.16s ease-out;
+    background-color: #F9E450;
+    border: 2px solid #1B1B1B;
+    border-radius: 16px;
+    padding: 16px 32px;        /* внутренние отступы */
+    font-weight: 800;
+    text-align: center;
+    width: 141px;
+    height: 56px;
+    cursor: pointer;
+    transition: 0.16s ease-out;
 }
 
 .btn:hover {
-  background: #FFBB38;
-  border: 4px solid #1B1B1B;
-  box-sizing: border-box;
-  box-shadow: 0px 0px 0px 4px #C1BFFA;
-  border-radius: 16px;
+    background: #FFBB38;
+    border: 4px solid #1B1B1B;
+    box-shadow: 0px 0px 0px 4px #C1BFFA;
 }
+
 
 #exit {
   cursor: pointer;
