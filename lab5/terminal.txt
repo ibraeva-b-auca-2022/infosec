@@ -1,0 +1,105 @@
+vagrant@vagrant:~$ cd infosec/lab5
+vagrant@vagrant:~/infosec/lab5$ ls
+vagrant@vagrant:~/infosec/lab5$ cat /etc/group
+root:x:0:
+daemon:x:1:
+bin:x:2:
+sys:x:3:
+adm:x:4:syslog,vagrant
+tty:x:5:
+disk:x:6:
+lp:x:7:
+mail:x:8:
+news:x:9:
+uucp:x:10:
+man:x:12:
+proxy:x:13:
+kmem:x:15:
+dialout:x:20:
+fax:x:21:
+voice:x:22:
+cdrom:x:24:vagrant
+floppy:x:25:
+tape:x:26:
+sudo:x:27:vagrant
+audio:x:29:
+dip:x:30:vagrant
+www-data:x:33:
+backup:x:34:
+operator:x:37:
+list:x:38:
+irc:x:39:
+src:x:40:
+shadow:x:42:
+utmp:x:43:
+video:x:44:
+sasl:x:45:
+plugdev:x:46:vagrant
+staff:x:50:
+games:x:60:
+users:x:100:
+nogroup:x:65534:
+systemd-journal:x:999:
+systemd-network:x:998:
+systemd-timesync:x:997:
+input:x:996:
+sgx:x:995:
+kvm:x:994:
+render:x:993:
+lxd:x:101:vagrant
+messagebus:x:102:
+systemd-resolve:x:992:
+_ssh:x:103:
+polkitd:x:991:
+crontab:x:990:
+syslog:x:104:
+uuidd:x:105:
+rdma:x:106:
+tcpdump:x:107:
+tss:x:108:
+landscape:x:109:
+fwupd-refresh:x:989:
+vagrant:x:1000:
+vboxsf:x:988:
+vboxdrmipc:x:987:
+vagrant@vagrant:~/infosec/lab5$ sudo groupadd group1
+vagrant@vagrant:~/infosec/lab5$ cat /etc/group | grep group1
+group1:x:1001:
+vagrant@vagrant:~/infosec/lab5$ sudo adduser user2
+info: Adding user `user2' ...
+info: Selecting UID/GID from range 1000 to 59999 ...
+info: Adding new group `user2' (1002) ...
+info: Adding new user `user2' (1002) with group `user2 (1002)' ...
+info: Creating home directory `/home/user2' ...
+info: Copying files from `/etc/skel' ...
+New password: 
+Retype new password:
+passwd: password updated successfully
+Changing the user information for user2
+Enter the new value, or press ENTER for the default
+        Full Name []: Bermet Ibraeva
+        Room Number []: 427
+        Work Phone []: 9999999999999
+        Home Phone []: 9999999999998
+        Other []:
+Is the information correct? [Y/n] y
+info: Adding new user `user2' to supplemental / extra groups `users' ...
+info: Adding user `user2' to group `users' ...
+vagrant@vagrant:~/infosec/lab5$ cat /etc/passwd | grep user2
+user2:x:1002:1002:Bermet Ibraeva,427,9999999999999,9999999999998:/home/user2:/bin/bash
+vagrant@vagrant:~/infosec/lab5$ sudo usermod -aG group1 user2
+vagrant@vagrant:~/infosec/lab5$ groups user2
+user2 : user2 users group1
+vagrant@vagrant:~/infosec/lab5$ su - user2
+Password: 
+user2@vagrant:~$ cd infosec/lab5
+-bash: cd: infosec/lab5: No such file or directory
+user2@vagrant:~$ exit
+logout
+vagrant@vagrant:~/infosec/lab5$ ls
+vagrant@vagrant:~/infosec/lab5$ cat /etc/passwd | grep user2
+user2:x:1002:1002:Bermet Ibraeva,427,9999999999999,9999999999998:/home/user2:/bin/bash
+vagrant@vagrant:~/infosec/lab5$ cat /etc/group | grep group1
+group1:x:1001:user2
+vagrant@vagrant:~/infosec/lab5$ groups user2
+user2 : user2 users group1
