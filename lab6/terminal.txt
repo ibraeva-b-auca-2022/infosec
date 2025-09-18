@@ -1,0 +1,33 @@
+vagrant@vagrant:~/infosec/lab6$ sudo useradd -m -s /bin/bash -G group2 user2
+useradd: group 'group2' does not exist
+vagrant@vagrant:~/infosec/lab6$ sudo groupadd group2
+vagrant@vagrant:~/infosec/lab6$ sudo useradd -m -s /bin/bash -G group2 user2
+useradd: user 'user2' already exists
+vagrant@vagrant:~/infosec/lab6$ sudo useradd -m -s /bin/bash -G group2 user3
+vagrant@vagrant:~/infosec/lab6$ sudo passwd user2
+New password:
+Retype new password:
+passwd: password updated successfully
+vagrant@vagrant:~/infosec/lab6$ sudo passwd user3
+New password:
+Retype new password:
+passwd: password updated successfully
+vagrant@vagrant:~/infosec/lab6$ sudo chown user1 file.txt
+vagrant@vagrant:~/infosec/lab6$ ls -la
+total 12
+drwxrwxr-x  2 vagrant vagrant 4096 Sep 15 21:43 .
+drwxrwxr-x 13 vagrant vagrant 4096 Sep 15 21:43 ..
+-rw-rw-r--  1 user1   vagrant   13 Sep 15 21:43 file.txt
+vagrant@vagrant:~/infosec/lab6$ ls -la file.txt
+-rw-rw-r-- 1 user1 vagrant 13 Sep 15 21:43 file.txt
+vagrant@vagrant:~/infosec/lab6$ sudo chgrp group2 file.txt
+vagrant@vagrant:~/infosec/lab6$ ls -la file.txt
+-rw-rw-r-- 1 user1 group2 13 Sep 15 21:43 file.txt
+vagrant@vagrant:~/infosec/lab6$ sudo chown user2:group1 file.txt
+vagrant@vagrant:~/infosec/lab6$ ls -la file.txt
+-rw-rw-r-- 1 user2 group1 13 Sep 15 21:43 file.txt
+vagrant@vagrant:~/infosec/lab6$ chmod 700 file.txt
+chmod: changing permissions of 'file.txt': Operation not permitted
+vagrant@vagrant:~/infosec/lab6$ ls
+file.txt
+vagrant@vagrant:~/infosec/lab6$ nano terminal.txt
