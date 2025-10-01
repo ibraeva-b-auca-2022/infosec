@@ -1,0 +1,18 @@
+  451  sudo apt update
+  452  sudo apt upgrade
+  453  cd infosec/lab9
+  454  ls
+  455  sudo apt search nginx
+  456  apt-cache depends nginx
+  457  sudo apt install nginx -y
+  458  sudo dpkg --configure -a
+  459  sudo apt install nginx -y
+  460  nginx -v
+  461  sudo systemctl status nginx
+  462  sudo systemctl restart nginx
+  463  sudo systemctl stop nginx
+  464  sudo systemctl start nginx
+  465  sudo apt remove nginx -y
+  466  sudo apt purge nginx -y
+  467  sudo apt autoremove -y
+  468  ls

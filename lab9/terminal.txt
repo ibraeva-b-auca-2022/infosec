@@ -1,0 +1,424 @@
+vagrant@vagrant:~$ cd infosec/lab9
+vagrant@vagrant:~/infosec/lab9$ ls
+vagrant@vagrant:~/infosec/lab9$ sudo apt search nginx
+Sorting... Done
+Full Text Search... Done
+anonip/noble 1.1.0-2 all
+  Anonymize IP-addresses in log-files
+
+centreon-plugins/noble 0.0~20230118-1 all
+  Collection of Nagios plugins to monitor OS, services and network devices
+
+collectd-core/noble 5.12.0-17.1build2 amd64
+  statistics collection and monitoring daemon (core system)
+
+crowdsec/noble-updates,noble-security 1.4.6-6ubuntu0.24.04.2 amd64
+  lightweight and collaborative security engine
+
+elpa-nginx-mode/noble 1.1.9-2 all
+  major mode for editing nginx config files
+
+fcgiwrap/noble 1.1.0-14build1 amd64
+  simple server to run CGI applications over FastCGI
+
+gitweb/noble-updates,noble-security 1:2.43.0-1ubuntu7.3 all
+  fast, scalable, distributed revision control system (web interface)
+
+golang-github-gorilla-handlers-dev/noble 1.5.2-1 all
+  collection of useful handlers for Go's net/http package
+
+golang-github-hashicorp-hcl-dev/noble 1.0.0-1.1 all
+  Go implementation of HashiCorp Configuration Language
+
+golang-github-hashicorp-hcl-v2-dev/noble 2.14.1-2 all
+  Go implementation of HashiCorp Configuration Language (version 2)
+
+golang-github-nginxinc-nginx-plus-go-client-dev/noble 1.2.0-1 all
+  client for NGINX Plus API for Go (library)
+
+gunicorn/noble 20.1.0-6 all
+  Event-based HTTP/WSGI server
+
+gunicorn-examples/noble 20.1.0-6 all
+  Event-based HTTP/WSGI server (examples)
+
+ledgersmb/noble-updates,noble-security 1.6.33+ds-2.1ubuntu0.1 all
+  financial accounting and ERP program
+
+lemonldap-ng-fastcgi-server/noble 2.18.2+ds-1 all
+  Lemonldap::NG FastCGI server
+
+lemonldap-ng-handler/noble 2.18.2+ds-1 all
+  Lemonldap::NG handler part
+
+liblemonldap-ng-ssoaas-apache-client-perl/noble 2.18.2+ds-1 all
+  Lemonldap::NG SSOaaS client for Apache
+
+libnginx-mod-http-auth-pam/noble 1:1.5.5-2build2 amd64
+  PAM authentication module for Nginx
+
+libnginx-mod-http-brotli-filter/noble 1.0.0~rc-5build1 amd64
+  Brotli lossless compression support for Nginx - filter
+
+libnginx-mod-http-brotli-static/noble 1.0.0~rc-5build1 amd64
+  Brotli lossless compression support for Nginx - static
+
+libnginx-mod-http-cache-purge/noble 1:2.3-6build2 amd64
+  Purge content from Nginx caches
+
+libnginx-mod-http-dav-ext/noble 1:3.0.0-5build2 amd64
+  WebDAV missing commands support for Nginx
+
+libnginx-mod-http-echo/noble 1:0.63-6build2 amd64
+  Bring echo and more shell style goodies to Nginx
+
+libnginx-mod-http-fancyindex/noble 1:0.5.2-5build1 amd64
+  Fancy indexes module for the Nginx
+
+libnginx-mod-http-geoip/noble-updates,noble-security 1.24.0-2ubuntu7.5 amd64
+  GeoIP HTTP module for Nginx
+
+libnginx-mod-http-geoip2/noble 1:3.4-5build2 amd64
+  GeoIP2 HTTP module for Nginx
+
+libnginx-mod-http-headers-more-filter/noble 1:0.37-2build1 amd64
+  Set and clear input and output headers for Nginx
+
+libnginx-mod-http-image-filter/noble-updates,noble-security 1.24.0-2ubuntu7.5 amd64
+  HTTP image filter module for Nginx
+
+libnginx-mod-http-js/noble 0.8.2-1ubuntu1 amd64
+  JavaScript HTTP module for Nginx
+
+libnginx-mod-http-lua/noble 1:0.10.26-2 amd64
+  Lua module for Nginx
+
+libnginx-mod-http-memc/noble 0.20-1build1 amd64
+  Extended memcached commands module for Nginx
+
+libnginx-mod-http-modsecurity/noble 1.0.3-1build3 amd64
+  WAF module for Nginx
+
+libnginx-mod-http-ndk/noble 1:0.3.3-1build1 amd64
+  Nginx Development Kit module
+
+libnginx-mod-http-ndk-dev/noble 1:0.3.3-1build1 all
+  Nginx Development Kit module - development files
+
+libnginx-mod-http-perl/noble-updates,noble-security 1.24.0-2ubuntu7.5 amd64
+  Perl module for Nginx
+
+libnginx-mod-http-set-misc/noble 0.33-5build1 amd64
+  Extended rewrite directives module for Nginx
+
+libnginx-mod-http-srcache-filter/noble 0.33-3build1 amd64
+  Transparent caching layer for Nginx
+
+libnginx-mod-http-subs-filter/noble 1:0.6.4-6build1 amd64
+  Substitution filter module for Nginx
+
+libnginx-mod-http-uploadprogress/noble 1:0.9.2-5build1 amd64
+  Upload progress system for Nginx
+
+libnginx-mod-http-upstream-fair/noble 1:0.0~git20120408.a18b409-5build1 amd64
+  Nginx Upstream Fair Proxy Load Balancer
+
+libnginx-mod-http-xslt-filter/noble-updates,noble-security 1.24.0-2ubuntu7.5 amd64
+  XSLT Transformation module for Nginx
+
+libnginx-mod-mail/noble-updates,noble-security 1.24.0-2ubuntu7.5 amd64
+  Mail module for Nginx
+
+libnginx-mod-nchan/noble 1:1.3.6+dfsg-4build1 amd64
+  Fast, flexible pub/sub server for Nginx
+
+libnginx-mod-rtmp/noble 1:1.2.2+dfsg-5build1 amd64
+  RTMP support for Nginx
+
+libnginx-mod-stream/noble-updates,noble-security 1.24.0-2ubuntu7.5 amd64
+  Stream module for Nginx
+
+libnginx-mod-stream-geoip/noble-updates,noble-security 1.24.0-2ubuntu7.5 amd64
+  GeoIP Stream module for Nginx
+
+libnginx-mod-stream-geoip2/noble 1:3.4-5build2 amd64
+  GeoIP2 Stream module for Nginx
+
+libnginx-mod-stream-js/noble 0.8.2-1ubuntu1 amd64
+  JavaScript Stream module for Nginx
+
+libplack-middleware-file-sass-perl/noble 0.03-5 all
+  Sass and SCSS support for all Plack-based PSGI frameworks
+
+lua-nginx-cookie/noble 0.1.0-1.1 all
+  Pure Lua cookie parser for the nginx embedded Lua language
+
+lua-nginx-dns/noble 0.20-1 all
+  DNS resolver for the nginx embedded Lua language
+
+lua-nginx-kafka/noble 0.07-1 all
+  Pure Lua Kafka producer for the nginx embedded Lua language
+
+lua-nginx-memcached/noble 0.14-1.1build1 all
+  Pure Lua memcached client driver for the nginx embedded Lua language
+
+lua-nginx-redis/noble 0.27-1.1build1 all
+  Pure Lua redis client driver for the nginx embedded Lua language
+
+lua-nginx-redis-connector/noble 0.06-1 all
+  Connection utilities for lua-nginx-redis
+
+lua-nginx-string/noble 0.11-1 all
+  String utilities for the nginx embedded Lua language
+
+lua-nginx-websocket/noble 0.08-1build1 all
+  Lua websocket client driver for the nginx embedded Lua language
+
+lua-resty-core/noble 0.1.28-2 all
+  New FFI-based Lua API for NGINX Lua module
+
+lua-resty-lrucache/noble 0.13-10 all
+  Simple LRU cache for the ngx_lua module
+
+mighttpd2/noble 4.0.3-2 amd64
+  classical web server on WAI/warp
+
+nginx/noble-updates,noble-security 1.24.0-2ubuntu7.5 amd64
+  small, powerful, scalable web/proxy server
+
+nginx-common/noble-updates,noble-security 1.24.0-2ubuntu7.5 all
+  small, powerful, scalable web/proxy server - common files
+
+nginx-confgen/noble 2.1-1 amd64
+  nginx configuration file macro language and preprocessor
+
+nginx-core/noble-updates,noble-security 1.24.0-2ubuntu7.5 all
+  nginx web/proxy server (standard version)
+
+nginx-dev/noble-updates,noble-security 1.24.0-2ubuntu7.5 all
+  nginx web/proxy server - development headers
+
+nginx-doc/noble-updates,noble-security 1.24.0-2ubuntu7.5 all
+  small, powerful, scalable web/proxy server - documentation
+
+nginx-extras/noble-updates,noble-security 1.24.0-2ubuntu7.5 amd64
+  nginx web/proxy server (extended version)
+
+nginx-full/noble-updates,noble-security 1.24.0-2ubuntu7.5 all
+  nginx web/proxy server (standard version with 3rd parties)
+
+nginx-light/noble-updates,noble-security 1.24.0-2ubuntu7.5 all
+  nginx web/proxy server (basic version)
+
+njs/noble 0.8.2-1ubuntu1 amd64
+  JavaScript for Nginx command-line utility
+
+prometheus-exporter-exporter/noble-updates,noble-security 0.4.0-1ubuntu0.24.04.3 amd64
+  simple reverse proxy to other Prometheus exporters
+
+prometheus-nginx-exporter/noble-updates,noble-security 1.1.0-1ubuntu0.3 amd64
+  Prometheus exporter for NGINX webservers
+
+python3-certbot-nginx/noble 2.9.0-1 all
+  Nginx plugin for Certbot
+
+python3-django-downloadview/noble 2.3.0-1 all
+  efficient static file serving with Django (Python3 version)
+
+python3-geventhttpclient/noble 2.0.11-2build1 amd64
+  high performance, concurrent HTTP client library for Python using gevent
+
+python3-gunicorn/noble 20.1.0-6 all
+  Event-based HTTP/WSGI server (Python 3 libraries)
+
+python3-roundrobin/noble 0.0.4-3 all
+  collection of roundrobin utilities
+
+python3-whitenoise/noble 6.0.0-3 all
+  static file serving for WSGI applications (Python 3)
+
+resource-agents-extra/noble 1:4.13.0-1ubuntu4 amd64
+  Cluster Resource Agents
+
+rt4-fcgi/noble 4.4.7+dfsg-1 all
+  External FastCGI support for request-tracker4
+
+rt5-fcgi/noble 5.0.5+dfsg-2 all
+  External FastCGI support for request-tracker5
+
+tryton-server-all-in-one/noble 6.0.39-1 all
+  Tryton application platform - full installation
+
+tryton-server-nginx/noble 6.0.39-1 all
+  Tryton application platform - Nginx integration
+
+tryton-server-uwsgi/noble 6.0.39-1 all
+  Tryton application platform - uWSGI integration
+
+vagrant@vagrant:~/infosec/lab9$ apt-cache depends nginx
+nginx
+  Depends: libc6
+  Depends: libcrypt1
+  Depends: libpcre2-8-0
+  Depends: libssl3t64
+  Depends: zlib1g
+  Depends: iproute2
+  Depends: nginx-common
+  Breaks: nginx-core
+  Breaks: nginx-extras
+  Breaks: nginx-light
+  Replaces: nginx-core
+  Replaces: nginx-extras
+  Replaces: nginx-light
+vagrant@vagrant:~/infosec/lab9$ sudo apt install nginx -y
+E: dpkg was interrupted, you must manually run 'sudo dpkg --configure -a' to correct the problem.
+vagrant@vagrant:~/infosec/lab9$ sudo dpkg --configure -a
+Setting up g++-13 (13.3.0-6ubuntu2~24.04) ...
+Setting up openssh-server (1:9.6p1-3ubuntu13.14) ...
+Replacing config file /etc/ssh/sshd_config with new version
+Setting up dconf-gsettings-backend:amd64 (0.40.0-4ubuntu0.1) ...
+Setting up ubuntu-minimal (1.539.2) ...
+Setting up libgbm1:amd64 (25.0.7-0ubuntu0.24.04.2) ...
+Setting up gstreamer1.0-plugins-good:amd64 (1.24.2-1ubuntu1.2) ...
+Setting up qemu-system-mips (1:8.2.2+ds-0ubuntu1.10) ...
+Setting up qemu-system-sparc (1:8.2.2+ds-0ubuntu1.10) ...
+Setting up libgl1-mesa-dri:amd64 (25.0.7-0ubuntu0.24.04.2) ...
+Setting up libfwupd2:amd64 (1.9.31-0ubuntu1~24.04.1) ...
+Setting up qemu-system-x86 (1:8.2.2+ds-0ubuntu1.10) ...
+Setting up qemu-system-ppc (1:8.2.2+ds-0ubuntu1.10) ...
+Setting up libpython3.12-dev:amd64 (3.12.3-1ubuntu0.8) ...
+Setting up qemu-system-misc (1:8.2.2+ds-0ubuntu1.10) ...
+Setting up pollinate (4.33-3.1ubuntu1.1) ...
+Setting up python3.12-dev (3.12.3-1ubuntu0.8) ...
+Setting up librbd1 (19.2.1-0ubuntu0.24.04.2) ...
+Setting up qemu-system-arm (1:8.2.2+ds-0ubuntu1.10) ...
+Setting up bind9-dnsutils (1:9.18.39-0ubuntu0.24.04.1) ...
+Setting up libsdl2-2.0-0:amd64 (2.30.0+dfsg-1ubuntu3.1) ...
+Setting up qemu-block-extra (1:8.2.2+ds-0ubuntu1.10) ...
+Setting up fwupd (1.9.31-0ubuntu1~24.04.1) ...
+fwupd-offline-update.service is a disabled or a static unit not running, not starting it.
+fwupd-refresh.service is a disabled or a static unit not running, not starting it.
+fwupd.service is a disabled or a static unit not running, not starting it.
+Setting up libgtk-3-common (3.24.41-4ubuntu1.3) ...
+Setting up libglx-mesa0:amd64 (25.0.7-0ubuntu0.24.04.2) ...
+Setting up qemu-system-modules-opengl (1:8.2.2+ds-0ubuntu1.10) ...
+Setting up libgtk-3-0t64:amd64 (3.24.41-4ubuntu1.3) ...
+Setting up qemu-system (1:8.2.2+ds-0ubuntu1.10) ...
+Setting up qemu-system-modules-spice (1:8.2.2+ds-0ubuntu1.10) ...
+Setting up qemu-system-gui (1:8.2.2+ds-0ubuntu1.10) ...
+Setting up libgtk-3-bin (3.24.41-4ubuntu1.3) ...
+Setting up apport-core-dump-handler (2.28.1-0ubuntu3.8) ...
+Setting up apport (2.28.1-0ubuntu3.8) ...
+apport-autoreport.service is a disabled or a static unit not running, not starting it.
+Setting up liblvm2cmd2.03:amd64 (2.03.16-3ubuntu3.2) ...
+Setting up dmeventd (2:1.02.185-3ubuntu3.2) ...
+dm-event.service is a disabled or a static unit not running, not starting it.
+Setting up lvm2 (2.03.16-3ubuntu3.2) ...
+Processing triggers for dbus (1.14.10-4ubuntu4.1) ...
+Processing triggers for sgml-base (1.31) ...
+Processing triggers for ca-certificates-java (20240118) ...
+done.
+Processing triggers for install-info (7.1-3build2) ...
+Setting up openjdk-21-jdk-headless:amd64 (21.0.8+9~us1-0ubuntu1~24.04.1) ...
+The following packages were automatically installed and are no longer required:
+  amd64-microcode libdbus-glib-1-2 libdrm-nouveau2 libdrm-radeon1 libgl1-amber-dri libglapi-mesa libimobiledevice6 libplist-2.0-4       
+  libupower-glib3 libusbmuxd6 libxcb-dri2-0 linux-modules-6.8.0-31-generic linux-modules-extra-6.8.0-31-generic linux-tools-6.8.0-31    
+  linux-tools-6.8.0-31-generic thermald upower usbmuxd
+Use 'sudo apt autoremove' to remove them.
+The following additional packages will be installed:
+  nginx-common
+Suggested packages:
+  fcgiwrap nginx-doc ssl-cert
+The following NEW packages will be installed:
+  nginx nginx-common
+0 upgraded, 2 newly installed, 0 to remove and 2 not upgraded.
+Need to get 564 kB of archives.
+After this operation, 1,596 kB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 nginx-common all 1.24.0-2ubuntu7.5 [43.4 kB]
+Get:2 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 nginx amd64 1.24.0-2ubuntu7.5 [520 kB]
+Fetched 564 kB in 3s (215 kB/s)
+Preconfiguring packages ...
+Selecting previously unselected package nginx-common.
+(Reading database ... 147620 files and directories currently installed.)
+Preparing to unpack .../nginx-common_1.24.0-2ubuntu7.5_all.deb ...
+Unpacking nginx-common (1.24.0-2ubuntu7.5) ...
+Selecting previously unselected package nginx.
+Preparing to unpack .../nginx_1.24.0-2ubuntu7.5_amd64.deb ...
+Unpacking nginx (1.24.0-2ubuntu7.5) ...
+Setting up nginx-common (1.24.0-2ubuntu7.5) ...
+Created symlink /etc/systemd/system/multi-user.target.wants/nginx.service → /usr/lib/systemd/system/nginx.service.
+Setting up nginx (1.24.0-2ubuntu7.5) ...
+ * Upgrading binary nginx                                                                                                        [ OK ] 
+Processing triggers for man-db (2.12.0-4build2) ...
+Processing triggers for ufw (0.36.2-6) ...
+Scanning processes...
+Scanning linux images...
+
+Running kernel seems to be up-to-date.
+
+No services need to be restarted.
+
+No containers need to be restarted.
+
+No user sessions are running outdated binaries.
+
+No VM guests are running outdated hypervisor (qemu) binaries on this host.
+vagrant@vagrant:~/infosec/lab9$ nginx -v
+nginx version: nginx/1.24.0 (Ubuntu)
+vagrant@vagrant:~/infosec/lab9$ sudo systemctl status nginx
+● nginx.service - A high performance web server and a reverse proxy server
+     Loaded: loaded (/usr/lib/systemd/system/nginx.service; enabled; preset: enabled)
+     Active: active (running) since Wed 2025-10-01 20:25:50 +06; 17s ago
+      Tasks: 5 (limit: 4637)
+     Memory: 3.7M (peak: 8.4M)
+        CPU: 67ms
+     CGroup: /system.slice/nginx.service
+             ├─7503 "nginx: master process /usr/sbin/nginx -g daemon on; master_process on;"
+             ├─7505 "nginx: worker process"
+             ├─7506 "nginx: worker process"
+             ├─7507 "nginx: worker process"
+             └─7508 "nginx: worker process"
+
+Oct 01 20:25:50 vagrant systemd[1]: Starting nginx.service - A high performance web server and a reverse proxy server...
+Oct 01 20:25:50 vagrant systemd[1]: Started nginx.service - A high performance web server and a reverse proxy server.
+vagrant@vagrant:~/infosec/lab9$ sudo systemctl restart nginx
+vagrant@vagrant:~/infosec/lab9$ sudo systemctl stop nginx
+vagrant@vagrant:~/infosec/lab9$ sudo systemctl start nginx
+vagrant@vagrant:~/infosec/lab9$ sudo apt remove nginx -y
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following packages were automatically installed and are no longer required:
+Reading state information... Done
+  libupower-glib3 libusbmuxd6 libxcb-dri2-0 linux-modules-6.8.0-31-generic linux-modules-extra-6.8.0-31-generic linux-tools-6.8.0-31    
+Setting up libglx-mesa0:amd64 (25.0.7-0ubuntu0.24.04.2) ...
+  linux-tools-6.8.0-31-generic nginx-common thermald upower usbmuxd
+0 upgraded, 0 newly installed, 19 to remove and 0 not upgraded.
+After this operation, 185 MB disk space will be freed.
+(Reading database ... 147660 files and directories currently installed.)
+Removing amd64-microcode (3.20250311.1ubuntu0.24.04.1) ...
+update-initramfs: deferring update (trigger activated)
+Removing thermald (2.5.6-2ubuntu0.24.04.2) ...
+Removing libdbus-glib-1-2:amd64 (0.112-3build2) ...
+Removing libgl1-amber-dri:amd64 (21.3.9-0ubuntu2) ...
+Removing libdrm-nouveau2:amd64 (2.4.122-1~ubuntu0.24.04.1) ...
+Removing libdrm-radeon1:amd64 (2.4.122-1~ubuntu0.24.04.1) ...
+Removing libglapi-mesa:amd64 (24.0.9-0ubuntu0.2) ...
+Removing usbmuxd (1.1.1-5~exp3ubuntu2) ...
+Removing upower (1.90.3-1) ...
+Removing libimobiledevice6:amd64 (1.3.0-8.1build3) ...
+Removing libusbmuxd6:amd64 (2.0.2-4build3) ...
+Removing libplist-2.0-4:amd64 (2.3.0-1~exp2build2) ...
+Removing libupower-glib3:amd64 (1.90.3-1) ...
+Removing libxcb-dri2-0:amd64 (1.15-1ubuntu2) ...
+Removing linux-modules-extra-6.8.0-31-generic (6.8.0-31.31) ...
+Removing linux-modules-6.8.0-31-generic (6.8.0-31.31) ...
+Removing linux-tools-6.8.0-31-generic (6.8.0-31.31) ...
+Removing linux-tools-6.8.0-31 (6.8.0-31.31) ...
+Removing nginx-common (1.24.0-2ubuntu7.5) ...
+Processing triggers for libc-bin (2.39-0ubuntu8.6) ...
+Processing triggers for man-db (2.12.0-4build2) ...
+Processing triggers for dbus (1.14.10-4ubuntu4.1) ...
+Processing triggers for udev (255.4-1ubuntu8.10) ...
+Processing triggers for initramfs-tools (0.142ubuntu25.5) ...
+update-initramfs: Generating /boot/initrd.img-6.8.0-49-generic
