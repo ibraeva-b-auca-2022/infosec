@@ -1,0 +1,29 @@
+vim commands, I know:
+
+i – insert mode  
+ESC – back to normal mode  
+%d – delete current line  
+%y – copy line  
+p – paste line     
+:w – save file  
+:q – quit vim  
+:wq – save and quit
+
+Additional vim commands I found:
+
+u – undo  
+Ctrl+r – redo  
+x – delete one character  
+/word – search word (n for next, N for previous)  
+:%s/old/new/g – replace all  
+:set number – show line numbers 
+o – open a new line below and go to insert mode  
+O – open a new line above and go to insert mode  
+A – go to end of line and insert  
+0 – jump to beginning of line  
+$ – jump to end of line  
+gg – go to top of file  
+G – go to bottom of file  
+:10 – jump to line 10  
+:!ls – run shell command (example: ls) without leaving vim  
+:help – open help inside vim 
