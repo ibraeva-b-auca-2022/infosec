@@ -1,0 +1,17 @@
+4. Document how permissions affect collaboration and isolation between users.
+
+In Linux, permissions control how users interact with files and each other’s work.
+Every file and folder has an owner, a group, and others.
+Each of them can have different access: read (r), write (w), or execute (x).
+This system basically decides who can view, edit, or run something.
+
+When permissions are set so that group members have read and write rights, users can easily work together on the same files.
+For example, developers in one team can edit scripts, share results, and update files without asking for root access.
+That’s how collaboration happens.
+
+But if permissions are strict, like only the owner has full access, then other users can’t open or touch those files.
+This creates isolation — it protects personal files or sensitive data from being changed or even viewed by others.
+
+So in short, permissions define the balance between teamwork and privacy.
+If they’re set right, everyone can work smoothly without breaking each other’s stuff.
+If not, it either becomes too open (risky) or too closed (inconvenient).
