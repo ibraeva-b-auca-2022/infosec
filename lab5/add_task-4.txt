@@ -1,4 +1,4 @@
-4. Document how permissions affect collaboration and isolation between users.
+4.Document how permissions affect collaboration and isolation between users.
 
 In Linux, permissions control how users interact with files and each other’s work.
 Every file and folder has an owner, a group, and others.
