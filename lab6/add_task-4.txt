@@ -1,0 +1,12 @@
+4. Prepare a short summary on the importance of permission auditing and least-privilege principles.
+
+Permission auditing and the least-privilege principle are important for keeping a Linux system secure and stable.
+Auditing means checking who has access to what, and making sure no one has unnecessary or risky permissions.
+It helps detect mistakes, like files that are world-writable or scripts that anyone can execute.
+
+The least-privilege principle means giving users only the permissions they really need to do their work — nothing more.
+This reduces damage if an account is hacked or a command is run by mistake.
+Even small permission issues can lead to data leaks or system compromise if not managed properly.
+
+By auditing permissions regularly and following the least-privilege rule, administrators can keep systems organized, safe, and harder to break.
+It’s basically about control and prevention, not fixing things after they go wrong.
