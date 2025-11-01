@@ -1,0 +1,70 @@
+vagrant@vagrant:~/infosec/lab11$ sudo apt install git perl
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+git is already the newest version (1:2.43.0-1ubuntu7.3).
+perl is already the newest version (5.38.2-3.2ubuntu0.2).
+perl set to manually installed.
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+vagrant@vagrant:~/infosec/lab11$ git clone https://github.com/cowsay-org/cowsay.git
+Cloning into 'cowsay'...
+remote: Enumerating objects: 955, done.
+remote: Counting objects: 100% (316/316), done.
+remote: Compressing objects: 100% (84/84), done.
+remote: Total 955 (delta 258), reused 241 (delta 228), pack-reused 639 (from 1)
+Receiving objects: 100% (955/955), 332.00 KiB | 1005.00 KiB/s, done.
+Resolving deltas: 100% (518/518), done.
+vagrant@vagrant:~/infosec/lab11$ ls
+cowsay
+vagrant@vagrant:~/infosec/lab11$ cd cowsay
+vagrant@vagrant:~/infosec/lab11/cowsay$ sudo make install
+install -c -d /usr/local/etc/cowsay/cowpath.d
+install -c -d /usr/local/bin
+install -c bin/cowsay /usr/local/bin/cowsay
+rm -f /usr/local/bin/cowthink
+ln -s cowsay /usr/local/bin/cowthink
+install -c -d /usr/local/share/man/man1
+install -c -m 644 man/man1/cowsay.1 /usr/local/share/man/man1/cowsay.1
+rm -f /usr/local/share/man/man1/cowthink.1
+ln -s cowsay.1 /usr/local/share/man/man1/cowthink.1
+install -c -d /usr/local/share/cowsay/cows
+install -c -m 644 share/cowsay/cows/*.cow /usr/local/share/cowsay/cows
+install -c -d /usr/local/share/cowsay/site-cows
+vagrant@vagrant:~/infosec/lab11/cowsay$ cowsay Hello
+ _______
+< Hello >
+ -------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+vagrant@vagrant:~/infosec/lab11/cowsay$ sudo apt install git python3 python3-pip python3-setuptools
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+git is already the newest version (1:2.43.0-1ubuntu7.3).
+python3 is already the newest version (3.12.3-0ubuntu2).
+python3-pip is already the newest version (24.0+dfsg-1ubuntu1.3).
+python3-setuptools is already the newest version (68.1.2-2ubuntu1.2).
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+vagrant@vagrant:~/infosec/lab11/cowsay$ git clone https://github.com/httpie/cli.git
+Cloning into 'cli'...
+remote: Enumerating objects: 10119, done.
+remote: Counting objects: 100% (1379/1379), done.
+remote: Compressing objects: 100% (174/174), done.
+remote: Total 10119 (delta 1258), reused 1205 (delta 1205), pack-reused 8740 (from 4)
+Receiving objects: 100% (10119/10119), 6.91 MiB | 6.67 MiB/s, done.
+Resolving deltas: 100% (6908/6908), done.
+vagrant@vagrant:~/infosec/lab11/cowsay$ cd cli
+vagrant@vagrant:~/infosec/lab11/cowsay/cli$ sudo python3 setup.py install
+running install
+/usr/lib/python3/dist-packages/setuptools/_distutils/cmd.py:66: SetuptoolsDeprecationWarning: setup.py install is deprecated.
+!!
+......
+continue
+vagrant@vagrant:~/infosec/lab11/cli$ http --version
+3.2.4
+vagrant@vagrant:~/infosec/lab11/cli$ ls
+AUTHORS.md  CHANGELOG.md        CONTRIBUTING.md  docs    httpie           LICENSE   MANIFEST.in  README.md    setup.cfg  snapcraft.yaml 
+build       CODE_OF_CONDUCT.md  dist             extras  httpie.egg-info  Makefile  pytest.ini   SECURITY.md  setup.py   tests
