@@ -1,0 +1,6 @@
+firstname:beka
+lastname:aliev
+dob:2003-07-10
+pet:boorsok
+city:talas
+
