@@ -1,0 +1,91 @@
+<div class="flex items-center justify-center p-12">
+  <div class="w-full max-w-xl rounded-lg bg-white p-10 shadow-lg">
+    <img src="your-image-url-here.jpg" alt="Form Image" class="mb-10 w-full" />
+
+    <form action="https://formbold.com/s/FORM_ID" method="POST">
+      <!-- First and Last Name -->
+      <div class="mb-8 flex gap-6">
+        <div class="w-1/2">
+          <label for="firstname" class="mb-2 block text-sm font-medium text-gray-600">First name</label>
+          <input type="text" name="firstname" id="firstname" placeholder="Jane" class="w-full rounded-md border border-gray-300 p-3 text-sm text-gray-800 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 focus:outline-none" />
+        </div>
+        <div class="w-1/2">
+          <label for="lastname" class="mb-2 block text-sm font-medium text-gray-600">Last name</label>
+          <input type="text" name="lastname" id="lastname" placeholder="Cooper" class="w-full rounded-md border border-gray-300 p-3 text-sm text-gray-800 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 focus:outline-none" />
+        </div>
+      </div>
+
+      <!-- Question One -->
+      <div class="mb-8">
+        <label for="qusOne" class="mb-2 block text-sm font-medium text-gray-600">All HTML code must be put which symbols?</label>
+        <div class="flex flex-col gap-4">
+          <div class="flex items-center">
+            <input class="mr-2" type="radio" name="qusOne" id="qusOne" />
+            <label for="qusOne" class="text-sm text-gray-800">Option one</label>
+          </div>
+          <div class="flex items-center">
+            <input class="mr-2" type="radio" name="qusOne" id="qusOne" />
+            <label for="qusOne" class="text-sm text-gray-800">Option Two</label>
+          </div>
+          <div class="flex items-center">
+            <input class="mr-2" type="radio" name="qusOne" id="qusOne" />
+            <label for="qusOne" class="text-sm text-gray-800">Option Three</label>
+          </div>
+          <div class="flex items-center">
+            <input class="mr-2" type="radio" name="qusOne" id="qusOne" />
+            <label for="qusOne" class="text-sm text-gray-800">None of them</label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Question Two -->
+      <div class="mb-8">
+        <label for="qusTwo" class="mb-2 block text-sm font-medium text-gray-600">To display any image on web which tag we have to use?</label>
+        <div class="flex flex-col gap-4">
+          <div class="flex items-center">
+            <input class="mr-2" type="radio" name="qusTwo" id="qusTwo" />
+            <label for="qusTwo" class="text-sm text-gray-800">Option one</label>
+          </div>
+          <div class="flex items-center">
+            <input class="mr-2" type="radio" name="qusTwo" id="qusTwo" />
+            <label for="qusTwo" class="text-sm text-gray-800">Option Two</label>
+          </div>
+          <div class="flex items-center">
+            <input class="mr-2" type="radio" name="qusTwo" id="qusTwo" />
+            <label for="qusTwo" class="text-sm text-gray-800">Option Three</label>
+          </div>
+          <div class="flex items-center">
+            <input class="mr-2" type="radio" name="qusTwo" id="qusTwo" />
+            <label for="qusTwo" class="text-sm text-gray-800">None of them</label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Question Three -->
+      <div class="mb-8">
+        <label for="qusThree" class="mb-2 block text-sm font-medium text-gray-600">What is the full definition of HTML?</label>
+        <div class="flex flex-col gap-4">
+          <div class="flex items-center">
+            <input class="mr-2" type="radio" name="qusThree" id="qusThree" />
+            <label for="qusThree" class="text-sm text-gray-800">Option one</label>
+          </div>
+          <div class="flex items-center">
+            <input class="mr-2" type="radio" name="qusThree" id="qusThree" />
+            <label for="qusThree" class="text-sm text-gray-800">Option Two</label>
+          </div>
+          <div class="flex items-center">
+            <input class="mr-2" type="radio" name="qusThree" id="qusThree" />
+            <label for="qusThree" class="text-sm text-gray-800">Option Three</label>
+          </div>
+          <div class="flex items-center">
+            <input class="mr-2" type="radio" name="qusThree" id="qusThree" />
+            <label for="qusThree" class="text-sm text-gray-800">None of them</label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Submit Button -->
+      <button type="submit" class="focus:ring-opacity-50 w-full rounded-md bg-indigo-600 px-6 py-3 font-medium text-white transition duration-300 hover:bg-indigo-700 focus:ring-2 focus:ring-indigo-500 focus:outline-none">Submit</button>
+    </form>
+  </div>
+</div>
