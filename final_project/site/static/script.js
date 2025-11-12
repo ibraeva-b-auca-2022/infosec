@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const answerOptions = document.querySelector(".answer-options");
   const questionStatus = document.querySelector(".question-status");
   const nextBtn = document.querySelector(".next-question-btn");
+  const exitBtn = document.querySelector(".exit-quiz-btn");
   const timerDisplay = document.querySelector(".timer-duration");
   const resultMessage = document.querySelector(".result-message");
   const tryAgainBtn = document.querySelector(".try-again-btn");
@@ -144,6 +145,13 @@ document.addEventListener("DOMContentLoaded", () => {
     currentIndex++;
     renderQuestion();
   });
+
+  // Exit quiz button
+  exitBtn.addEventListener("click", () => {
+    clearInterval(timer);
+    showResult()
+  });
+
 
   // Try again button
   tryAgainBtn.addEventListener("click", () => {

@@ -308,6 +308,31 @@ body {
   background: #388bfd;
 }
 
+.quiz-controls {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.exit-quiz-btn {
+  display: inline-flex;
+  gap: 5px;
+  align-items: center;
+  padding: 9px 17px;
+  background: #dc3545; /* red */
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.exit-quiz-btn:hover {
+  background: #e74c3c; /* brighter red on hover */
+}
+
+
 /* ==== Quiz Result Stylings ==== */
 .result-container {
   text-align: center;
