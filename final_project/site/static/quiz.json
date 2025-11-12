@@ -48,6 +48,5 @@
   {"question": "Which command transfers data using curl?", "options": ["curl url", "wget url", "scp source destination", "ssh user@host"], "answer": "curl url", "level": "hard"},
   {"question": "Which command creates a new user?", "options": ["useradd username", "userdel username", "passwd username", "su username"], "answer": "useradd username", "level": "hard"},
   {"question": "Which command deletes a user?", "options": ["userdel username", "useradd username", "passwd username", "su username"], "answer": "userdel username", "level": "hard"}
-
 ]
 
