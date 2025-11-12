@@ -1,0 +1,89 @@
+Choose difficulty level (easy, medium, hard): easy
+=== Welcome to the Linux Command Quiz Game! ヽ(・∀・)ﾉ ===
+
+Type the number of the correct answer and press Enter.
+Type 'q' or 'exit' to quit anytime.
+
+Question 1: Which command removes a file?
+1. rm -r
+2. cp
+3. mv
+4. rm
+Your choice (1-4 or q to quit): 1
+Wrong! Correct answer: rm ( ╥ω╥ )
+
+Question 2: Which command goes to the home directory?
+1. ls
+2. pwd
+3. cd ..
+4. cd ~
+Your choice (1-4 or q to quit): 2
+Wrong! Correct answer: cd ~ ( ╥ω╥ )
+
+Question 3: Which command shows the current user?
+1. whoami
+2. df
+3. uname
+4. free
+Your choice (1-4 or q to quit): 3
+Wrong! Correct answer: whoami ( ╥ω╥ )
+
+Question 4: Which command changes the current directory?
+1. mkdir
+2. pwd
+3. ls
+4. cd
+Your choice (1-4 or q to quit): 4
+Correct! ヽ(・∀・)ﾉ
+
+Question 5: Which command moves or renames files?
+1. mv
+2. mkdir
+3. rm
+4. cp
+Your choice (1-4 or q to quit): 5
+Please enter a number between 1 and 4. ( ╥ω╥ )
+Your choice (1-4 or q to quit): 2
+Wrong! Correct answer: mv ( ╥ω╥ )
+
+Question 6: Which command displays file contents?
+1. tail
+2. head
+3. cat
+4. less
+Your choice (1-4 or q to quit): 1
+Wrong! Correct answer: cat ( ╥ω╥ )
+
+Question 7: Which command goes up one level?
+1. cd ..
+2. cd ~
+3. ls
+4. pwd
+Your choice (1-4 or q to quit): 1
+Correct! ヽ(・∀・)ﾉ
+
+Question 8: Which command shows the first few lines of a file?
+1. cat
+2. head
+3. less
+4. tail
+Your choice (1-4 or q to quit): 1
+Wrong! Correct answer: head ( ╥ω╥ )
+
+Question 9: Which command shows the last few lines of a file?
+1. cat
+2. less
+3. tail
+4. head
+Your choice (1-4 or q to quit): 1
+Wrong! Correct answer: tail ( ╥ω╥ )
+
+Question 10: Which command creates a directory?
+1. mkdir
+2. rm
+3. cp
+4. ls
+Your choice (1-4 or q to quit): q
+
+Exiting the game...
+Your final score: 2/15
