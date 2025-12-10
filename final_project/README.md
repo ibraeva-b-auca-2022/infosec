@@ -1,5 +1,5 @@
-# Interactive Linux Quiz Game — Info-Sec Final Project
-Made by: Amin Kubanychbekov (ka12363)
+# Interactive Linux Quiz Game
+Made by: Bermet Ibraeva 11358
 
 This project is an interactive Linux command quiz designed for the AUCA Information Security course.  
 It includes both a terminal-based quiz and a web-based quiz built with Flask.
