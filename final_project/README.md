@@ -43,149 +43,99 @@ Example structure:
   "level": "easy"
 }
 
-Includes:
 ```
-15 easy questions
+# Difficulty Modes
 
-19 medium questions
+## Question Counts
+Includes:  
+- **15 easy questions**  
+- **19 medium questions**  
+- **28 hard questions**
 
-28 hard questions
-
-Difficulty Modes
-
+### User Difficulty Selection
 Users choose one mode:
 
-Easy — 15 questions
+- *Easy* — 15 questions  
+- *Medium* — 19 questions  
+- *Hard* — 28 questions  
 
-Medium — 19 questions
+Difficulty level determines which `"level"` entries are selected from the JSON file.
 
-Hard — 28 questions
+---
 
-Difficulty level determines which JSON entries are selected.
+# Final Results Summary
 
-Final Results Summary
+## What the Quiz Displays
+At the end of the quiz, the system shows:
 
-At the end of the quiz, the system displays:
+- **Total questions answered**  
+- **Number of correct answers**  
+- **Number of incorrect answers**
 
-Total questions
+### Purpose
+This keeps the output simple, readable, and learning-focused.
 
-Number of correct answers
+---
 
-Number of incorrect answers
+# Security Relevance
 
-This keeps the output simple and learning-focused.
+## Commands Used in Medium and Hard Levels
+These are real commands used in cybersecurity operations:
 
-Security Relevance
-
-Medium and hard question sets include real commands used in cybersecurity operations:
-
-Permissions: chmod, chown, chgrp
-
-Processes: ps, top, kill, killall
-
-Networking: ping, ifconfig, ssh, wget, curl
-
-Log and search tools: grep, grep -r
-
-System services: systemctl
-
+```text
+Permissions: chmod, chown, chgrp  
+Processes: ps, top, kill, killall  
+Networking: ping, ifconfig, ssh, wget, curl  
+Log and search tools: grep, grep -r  
+System services: systemctl  
 Filesystems: mount, umount, fsck, mkfs.ext4
+```
 
-These commands reflect practical tasks in system administration, incident response, pentesting, and digital forensics.
+# Directory Layout
 
-Project Structure
+```text
 final_project/
 │
-├── screenshots/               # Project images
+├── screenshots/               → Project images
 │
-├── site/                      # Web version
+├── site/                      → Web version
 │   ├── static/
-│   │   ├── quiz.json          # Question dataset
-│   │   ├── script.js          # Frontend logic
-│   │   └── style.css          # Web UI styling
+│   │   ├── quiz.json          → Question dataset
+│   │   ├── script.js          → Frontend logic
+│   │   └── style.css          → Web UI styling
 │   │
 │   ├── templates/
-│   │   └── index.html         # Web quiz interface
+│   │   └── index.html         → Web quiz interface
 │   │
-│   └── app.py                 # Flask backend
+│   └── app.py                 → Flask backend
 │
-└── terminal/                  # Terminal version
-    ├── quiz.json              # Question dataset
-    └── test.py                # CLI quiz script
-
-Architecture Overview
-Backend
-
-Flask application serving HTML and static files
-
-Loads JSON dataset
-
-Manages quiz flow for the web version
-
-Frontend (Web)
-
-index.html provides the user interface
-
-script.js loads questions, shows options, evaluates answers
-
-style.css defines the visual layout
-
-Terminal Version
-
-Python script (test.py)
-
-Reads JSON directly
-
-Prints questions and checks input
-
-Running the Project
-1. Create a virtual environment
+└── terminal/                  → Terminal version
+    ├── quiz.json              → Question dataset
+    └── test.py                → CLI quiz script
+```
+#Running the Project
+###1. Create a virtual environment
+```
 python -m venv .venv
 source .venv/bin/activate       # macOS / Linux
 .venv\Scripts\activate.bat      # Windows
-
-2. Install dependencies
-
-Required only for Flask version:
-
-pip install flask
-
-3. Run the Web Quiz
-
-Inside the site folder:
-
+```
+###2. Install dependencies (Flask only)
+```
+pip install Flask
+```
+###3. Run the Web Quiz
+```
+cd site
 python app.py
+```
 
-
-Then open:
-
+###Open in browser:
+```
 http://localhost:8000
-
+```
 4. Run the Terminal Quiz
-
-Inside the terminal folder:
-
+```
+cd terminal
 python test.py
-
-Screenshots
-
-Screenshots are provided in the screenshots directory.
-They demonstrate:
-
-Directory structure
-
-Web interface
-
-Terminal interface
-
-Final results
-
-Video Showcase
-
-Add your video link here: https://vimeo.com/1144902055/6eb1ebce22?share=copy&fl=sv&fe=ci
-
-Conclusion
-
-This project provides a functional, easy-to-use Linux command quiz with both terminal and web interfaces.
-It uses a unified JSON dataset, focuses on commands relevant to information security, and is structured to be easy to maintain and extend.
-The tool is effective for practicing Linux fundamentals and preparing for hands-on cybersecurity work.
+```
