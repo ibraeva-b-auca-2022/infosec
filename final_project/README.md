@@ -44,14 +44,6 @@ Example structure:
 }
 
 ```
-# Difficulty Modes
-
-## Question Counts
-Includes:  
-- **15 easy questions**  
-- **19 medium questions**  
-- **28 hard questions**
-
 ### User Difficulty Selection
 Users choose one mode:
 
