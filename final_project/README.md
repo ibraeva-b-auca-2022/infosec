@@ -77,7 +77,7 @@ This keeps the output simple, readable, and learning-focused.
 
 ---
 
-# Security Relevance
+## Security Relevance
 
 ## Commands Used in Medium and Hard Levels
 These are real commands used in cybersecurity operations:
@@ -91,7 +91,7 @@ System services: systemctl
 Filesystems: mount, umount, fsck, mkfs.ext4
 ```
 
-# Directory Layout
+### Directory Layout
 
 ```text
 final_project/
@@ -113,24 +113,24 @@ final_project/
     ├── quiz.json              → Question dataset
     └── test.py                → CLI quiz script
 ```
-#Running the Project
-###1. Create a virtual environment
+## Running the Project
+### 1. Create a virtual environment
 ```
 python -m venv .venv
 source .venv/bin/activate       # macOS / Linux
 .venv\Scripts\activate.bat      # Windows
 ```
-###2. Install dependencies (Flask only)
+### 2. Install dependencies (Flask only)
 ```
 pip install Flask
 ```
-###3. Run the Web Quiz
+### 3. Run the Web Quiz
 ```
 cd site
 python app.py
 ```
 
-###Open in browser:
+### Open in browser:
 ```
 http://localhost:8000
 ```
@@ -139,3 +139,14 @@ http://localhost:8000
 cd terminal
 python test.py
 ```
+## Video Showcase
+
+```
+https://vimeo.com/1144902055/6eb1ebce22?share=copy&fl=sv&fe=ci
+```
+## Conclusion
+
+This project provides a simple but effective Linux training tool.
+The dual interface (terminal + web) makes it accessible for different learning styles.
+The JSON-based question bank keeps the system easy to maintain and extend.
+Its focus on real Linux and InfoSec commands makes it practical for hands-on cybersecurity training.
