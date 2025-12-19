@@ -11,67 +11,54 @@ document.addEventListener("DOMContentLoaded", () => {
   const questionStatus = document.querySelector(".question-status");
   const nextBtn = document.querySelector(".next-question-btn");
   const exitBtn = document.querySelector(".exit-quiz-btn");
+
   const timerDisplay = document.querySelector(".timer-duration");
   const resultMessage = document.querySelector(".result-message");
   const tryAgainBtn = document.querySelector(".try-again-btn");
 
-  let questions = [];
   let selectedQuestions = [];
   let currentIndex = 0;
-  let correctAnswersCount = 0;
+
+  let attemptId = null;
+  let userAnswers = {};
+
   let timer = null;
   let currentTime = 15;
 
-  // Load quiz.json from Flask static folder
-  fetch(quizDataUrl)
-    .then(res => res.json())
-    .then(data => {
-      questions = data;
-      console.log("Questions loaded:", questions);
-    })
-    .catch(err => console.error("Error loading quiz.json:", err));
-
-  // Level selection
-  levelButtons.forEach(btn => {
-    btn.addEventListener("click", () => {
-      levelButtons.forEach(b => b.classList.remove("active"));
-      btn.classList.add("active");
-    });
-  });
-
-  // Timer functions
   const resetTimer = () => {
     clearInterval(timer);
     currentTime = 15;
     timerDisplay.textContent = currentTime + "s";
   };
 
+  const showNextBtn = () => {
+    nextBtn.style.display = "inline-flex";
+  };
+
   const startTimer = () => {
     timer = setInterval(() => {
       currentTime--;
       timerDisplay.textContent = currentTime + "s";
+
       if (currentTime <= 0) {
         clearInterval(timer);
-        // Auto-show correct answer if time runs out
+
         const allOptions = answerOptions.querySelectorAll(".answer-option");
         allOptions.forEach(o => {
-          if (o.querySelector("span").textContent === selectedQuestions[currentIndex].answer) {
-            o.classList.add("correct");
-          }
           o.style.pointerEvents = "none";
+          o.classList.add("disabled");
         });
+
         showNextBtn();
       }
     }, 1000);
   };
 
-  const showNextBtn = () => {
-    nextBtn.style.display = "inline-flex";
-  };
-
-  // Render a question
   const renderQuestion = () => {
-    if (currentIndex >= selectedQuestions.length) return showResult();
+    if (currentIndex >= selectedQuestions.length) {
+      showResult();
+      return;
+    }
 
     const q = selectedQuestions[currentIndex];
     questionText.textContent = q.question;
@@ -88,23 +75,11 @@ document.addEventListener("DOMContentLoaded", () => {
       li.addEventListener("click", () => {
         clearInterval(timer);
 
-        // Disable all options
         const allOptions = answerOptions.querySelectorAll(".answer-option");
-        allOptions.forEach(o => o.style.pointerEvents = "none");
+        allOptions.forEach(o => (o.style.pointerEvents = "none"));
 
-        // Mark selection
-        if (opt === q.answer) {
-          li.classList.add("correct");
-          correctAnswersCount++;
-        } else {
-          li.classList.add("incorrect");
-          // Highlight correct answer
-          allOptions.forEach(o => {
-            if (o.querySelector("span").textContent === q.answer) {
-              o.classList.add("correct");
-            }
-          });
-        }
+        li.classList.add("selected");
+        userAnswers[q.id] = opt;
 
         showNextBtn();
       });
@@ -118,45 +93,107 @@ document.addEventListener("DOMContentLoaded", () => {
     nextBtn.style.display = "none";
   };
 
-  // Show result
-  const showResult = () => {
+  const showResult = async () => {
+    clearInterval(timer);
+
     quizPopup.classList.remove("active");
     resultPopup.classList.add("active");
-    resultMessage.innerHTML = `You answered <b>${correctAnswersCount}</b> out of <b>${selectedQuestions.length}</b> correctly.`;
+
+    if (!attemptId) {
+      resultMessage.innerHTML = `No active attempt.`;
+      return;
+    }
+
+    try {
+      const res = await fetch("/api/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          attempt_id: attemptId,
+          answers: userAnswers
+        })
+      });
+
+      if (!res.ok) {
+        const txt = await res.text();
+        resultMessage.innerHTML = `Submit failed.<br><small>${txt}</small>`;
+        return;
+      }
+
+      const r = await res.json();
+      resultMessage.innerHTML =
+      `Correct: <b>${r.correct}</b> out of <b>${r.total}</b><br>`;
+    } catch (e) {
+      console.error(e);
+      resultMessage.innerHTML = `Network error.`;
+    } finally {
+      attemptId = null;
+    }
   };
 
-  // Start quiz button
-  startBtn.addEventListener("click", () => {
-    const activeLevel = document.querySelector(".level-option.active").textContent.toLowerCase();
-    selectedQuestions = questions.filter(q => q.level.toLowerCase() === activeLevel);
+  startBtn.addEventListener("click", async () => {
+    const activeBtn = document.querySelector(".level-option.active");
+    if (!activeBtn) {
+      alert("Please select a difficulty level.");
+      return;
+    }
 
-    if (!selectedQuestions.length) return alert("No questions for this level!");
+    const level = activeBtn.textContent.toLowerCase();
 
-    configPopup.classList.remove("active");
-    quizPopup.classList.add("active");
+    try {
+      const res = await fetch(`/api/start?level=${encodeURIComponent(level)}`);
+      if (!res.ok) {
+        const txt = await res.text();
+        alert("Failed to start the quiz.\n" + txt);
+        return;
+      }
 
-    currentIndex = 0;
-    correctAnswersCount = 0;
-    renderQuestion();
+      const data = await res.json();
+      attemptId = data.attempt_id;
+      selectedQuestions = data.questions || [];
+      userAnswers = {};
+      currentIndex = 0;
+
+      if (!selectedQuestions.length) {
+        alert("No questions returned by the server.");
+        return;
+      }
+
+      configPopup.classList.remove("active");
+      quizPopup.classList.add("active");
+
+      renderQuestion();
+    } catch (e) {
+      console.error(e);
+      alert("Network error while starting the quiz.");
+    }
   });
 
-  // Next button
   nextBtn.addEventListener("click", () => {
     currentIndex++;
     renderQuestion();
   });
 
-  // Exit quiz button
   exitBtn.addEventListener("click", () => {
-    clearInterval(timer);
-    showResult()
+    showResult();
   });
 
-
-  // Try again button
   tryAgainBtn.addEventListener("click", () => {
+    clearInterval(timer);
+
     resultPopup.classList.remove("active");
     configPopup.classList.add("active");
-  });
-});
 
+    selectedQuestions = [];
+    currentIndex = 0;
+    attemptId = null;
+    userAnswers = {};
+    resetTimer();
+  });
+
+  if (!document.querySelector(".level-option.active") && levelButtons.length) {
+    levelButtons[0].classList.add("active");
+  }
+
+  timerDisplay.textContent = currentTime + "s";
+});

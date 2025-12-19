@@ -2,7 +2,7 @@ import json
 import random
 
 # Загрузка вопросов из JSON-файла
-with open("quiz.json", "r") as f:
+with open("../quiz.json", "r") as f:
     all_questions = json.load(f)
 
 def run_quiz(questions):
