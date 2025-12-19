@@ -5,9 +5,9 @@ This project is an interactive Linux command quiz designed for the AUCA Informat
 It includes both a terminal-based quiz and a web-based quiz built with Flask.
 
 Users can choose between three difficulty levels (Easy / Medium / Hard), and the system loads questions dynamically from a unified JSON dataset.
-Questions are loaded dynamically from a unified JSON-based question bank, while all validation and scoring are performed server-side.
-
+Questions are loaded dynamically from a unified JSON-based question bank, while all validation and scoring are performed server-side. 
 The project focuses on Linux fundamentals and security-relevant commands, making it suitable for both beginners and advanced InfoSec learners.
+
 ---
 
 ## Features
